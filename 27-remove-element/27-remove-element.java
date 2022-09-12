@@ -4,12 +4,11 @@ class Solution {
 		
 		for(int i=0; i<nums.length; i++) {
 			if(nums[i] == val) {
-				nums[i] = 51;
 				removedCount++;
+			} else {
+				nums[i-removedCount] = nums[i];
 			}
 		}
-		
-		Arrays.sort(nums);
 		
 		return nums.length-removedCount;
     }
